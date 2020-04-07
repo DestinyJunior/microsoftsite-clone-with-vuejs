@@ -1,0 +1,172 @@
+<template>
+    <div>
+        <div class="menu-btn">
+          <i class="fas fa-bars fa-2x">|--|</i>
+    </div>
+        <main class="container">
+          <!-- Navbar -->
+                <navbar></navbar>
+          <!-- EndNavbar -->
+            <!-- showcase -->
+
+            <header class="showcase">
+                <h2>Surface Deals</h2>
+                <p>
+                    Select Surfaces are on sale now - save while supplies last
+                </p>
+                <a href="" class="btn">Shop Now <i class="fas fa-chevron-right"></i></a>
+            </header>
+
+            <!-- home cards 1 -->
+            <section class="home-cards">
+                <div>
+                    <img src="@/assets/img/card1.png" alt="">
+                    <h3>New Suface Pro 7</h3>
+                    <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
+                    to put her plans into play.</p>
+                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div>
+                    <img src="@/assets/img/card2.png" alt="" />
+                    <h3>New Surface Laptop 3</h3>
+                    <p>
+                        Express yourself powerfully with a thin, light, and elegant design,
+                        faster performance, and up to 11.5 hours battery life.
+                    </p>
+                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div>
+                    <img src="@/assets/img/card3.png" alt="" />
+                    <h3>Save $150 + free controller</h3>
+                    <p>
+                        Buy an Xbox One X console and double your fun with a free select
+                        extra controller. Starting at $349.
+                    </p>
+                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+                </div>
+                <div>
+                    <img src="@/assets/img/card4.png" alt="" />
+                    <h3>The new Microsoft Edge</h3>
+                    <p>
+                        Expect more. World class performance, with more privacy, more
+                        productivity, and more value.
+                    </p>
+                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
+                </div>
+                
+            </section>
+
+        <!-- Xbox -->
+        <section class="xbox">
+            <div class="content">
+                <h2>Xbox Game Pass Ultimate</h2>
+                <p>Xbox Game Pass Ultimate Xbox Live Gold and over 100 high-quality
+                    console and PC games. Play together with friends and discover your
+                    next favorite game.</p>
+                <a href="#" class="btn">
+                    Join Now <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </section>
+        
+        <!-- Home cards 2 -->
+        <section class="home-cards">
+            <div>
+                <img src="@/assets/img/card5.png" alt="" />
+                <h3>Microsoft Teams</h3>
+                <p>
+                    Unleash the power of your team.
+                </p>
+                <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div>
+                <img src="@/assets/img/card6.jpg" alt="" />
+                <h3>Unlock the power of learning</h3>
+                <p>
+                    Get students future-ready with Windows 10 devices. Starting at $219.
+                </p>
+                <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div>
+                <img src="@/assets/img/card7.png" alt="" />
+                <h3>Windows 10 Enterprise</h3>
+                <p>
+                    Download the free 90-day evaluation for IT professionals.
+                </p>
+                <a href="#">Download Now <i class="fas fa-chevron-right"></i></a>
+            </div>
+            <div>
+                <img src="@/assets/img/card8.png" alt="" />
+                <h3>Explore Kubernetes</h3>
+                <p>
+                    Learn how Kubernetes works and get started with cloud native app
+                    development today.
+                </p>
+                <a href="#">Get Started <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </section>
+
+        <!-- carbon -->
+        <section class="carbon dark">
+            <div class="content">
+                    <h2>Commiting To Carbon Negative</h2>
+                    <p>Microsoft will be carbon negative by 2030 and by 2050 we will remove
+                        all carbon the company has emitted since it was founded in 1975</p>
+                    <a href="#" class="btn">
+                        Learn More <i class="fas fa-chevron-right"></i>
+                    </a>
+            </div>
+        </section>
+
+            <!-- Follow -->
+            <section class="follow">
+                <p>Follow Microsoft</p>
+                <a href="https://facebook.com">
+                    <img src="@/assets/img/social-fb.png" alt="Facebook">
+                </a>
+                <a href="https://twitter.com">
+                    <img src="@/assets/img/social-twitter.png" alt="Twitter">
+                </a>
+                <a href="https://linkedin.com">
+                    <img src="@/assets/img/social-linkedin.png" alt="Linkedin">
+                </a>
+            </section>
+        </main>              
+        <!-- Footer & Links -->
+                <ftr></ftr>
+        <!-- End Footer & Links -->
+    </div>
+    
+</template>
+<script>
+import navbar from '../components/navbar';
+import ftr from "../components/footer";
+
+export default {
+    components : {
+        navbar,
+        ftr,
+    },
+    data(){
+        return {
+
+        }
+    },
+    created(){
+        window.addEventListener("load", () => {
+             document
+                .querySelector(".menu-btn")
+                .addEventListener("click", () =>
+                document.querySelector(".main-menu").classList.toggle("show")
+                );
+
+      });
+       },
+    methods: {
+        
+    },
+}
+</script>
+<style scoped>
+  
+</style>
