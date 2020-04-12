@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="menu-btn">
-          <i class="fas fa-bars fa-2x">|--|</i>
+          <i class="fas fa-bars fa-2x"></i>
     </div>
         <main class="container">
           <!-- Navbar -->
@@ -19,13 +19,20 @@
 
             <!-- home cards 1 -->
             <section class="home-cards">
-                <div>
+                <mycards
+                    imgSrc="card1.png"
+                    title="New Suface Pro 7"
+                    content="See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
+                    to put her plans into play."
+                    btnText="Learn More"
+                ></mycards>
+                <!-- <div>
                     <img src="@/assets/img/card1.png" alt="">
                     <h3>New Suface Pro 7</h3>
                     <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
                     to put her plans into play.</p>
                     <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-                </div>
+                </div> -->
                 <div>
                     <img src="@/assets/img/card2.png" alt="" />
                     <h3>New Surface Laptop 3</h3>
@@ -141,18 +148,21 @@
 <script>
 import navbar from '../components/navbar';
 import ftr from "../components/footer";
+import mycards from "../components/cards";
 
 export default {
     components : {
         navbar,
         ftr,
+        mycards,
     },
     data(){
         return {
-
+            imgSrc: String
         }
     },
     created(){
+        // this.imgSrc = '@/assets/img/card1.png';
         window.addEventListener("load", () => {
              document
                 .querySelector(".menu-btn")
