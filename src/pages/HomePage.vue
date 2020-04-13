@@ -19,47 +19,12 @@
 
             <!-- home cards 1 -->
             <section class="home-cards">
-                <mycards
-                    imgSrc="card1.png"
-                    title="New Suface Pro 7"
-                    content="See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
-                    to put her plans into play."
-                    btnText="Learn More"
-                ></mycards>
-                <!-- <div>
-                    <img src="@/assets/img/card1.png" alt="">
-                    <h3>New Suface Pro 7</h3>
-                    <p>See how Katie Sowers, Asst. Coach for the 49ers, uses Surface Pro 7
-                    to put her plans into play.</p>
-                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-                </div> -->
-                <div>
-                    <img src="@/assets/img/card2.png" alt="" />
-                    <h3>New Surface Laptop 3</h3>
-                    <p>
-                        Express yourself powerfully with a thin, light, and elegant design,
-                        faster performance, and up to 11.5 hours battery life.
-                    </p>
-                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div>
-                    <img src="@/assets/img/card3.png" alt="" />
-                    <h3>Save $150 + free controller</h3>
-                    <p>
-                        Buy an Xbox One X console and double your fun with a free select
-                        extra controller. Starting at $349.
-                    </p>
-                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-                </div>
-                <div>
-                    <img src="@/assets/img/card4.png" alt="" />
-                    <h3>The new Microsoft Edge</h3>
-                    <p>
-                        Expect more. World class performance, with more privacy, more
-                        productivity, and more value.
-                    </p>
-                    <a href="#">Learn More <i class="fas fa-chevron-right"></i></a>
-                </div>
+                <mycards v-for="card in cards.slice(0, 4)" :key="card.title"
+                    :imgSrc="card.imgSrc"
+                    :title="card.title"
+                    :content="card.content"
+                    :btnText="card.btnText"
+                ></mycards>               
                 
             </section>
 
@@ -78,39 +43,12 @@
         
         <!-- Home cards 2 -->
         <section class="home-cards">
-            <div>
-                <img src="@/assets/img/card5.png" alt="" />
-                <h3>Microsoft Teams</h3>
-                <p>
-                    Unleash the power of your team.
-                </p>
-                <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div>
-                <img src="@/assets/img/card6.jpg" alt="" />
-                <h3>Unlock the power of learning</h3>
-                <p>
-                    Get students future-ready with Windows 10 devices. Starting at $219.
-                </p>
-                <a href="#">Shop Now <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div>
-                <img src="@/assets/img/card7.png" alt="" />
-                <h3>Windows 10 Enterprise</h3>
-                <p>
-                    Download the free 90-day evaluation for IT professionals.
-                </p>
-                <a href="#">Download Now <i class="fas fa-chevron-right"></i></a>
-            </div>
-            <div>
-                <img src="@/assets/img/card8.png" alt="" />
-                <h3>Explore Kubernetes</h3>
-                <p>
-                    Learn how Kubernetes works and get started with cloud native app
-                    development today.
-                </p>
-                <a href="#">Get Started <i class="fas fa-chevron-right"></i></a>
-            </div>
+             <mycards v-for="card in cards.slice(4, 8)" :key="card.title"
+                    :imgSrc="card.imgSrc"
+                    :title="card.title"
+                    :content="card.content"
+                    :btnText="card.btnText"
+                ></mycards>            
         </section>
 
         <!-- carbon -->
@@ -158,7 +96,8 @@ export default {
     },
     data(){
         return {
-            imgSrc: String
+            imgSrc: String,
+            cards: []
         }
     },
     created(){
@@ -172,8 +111,83 @@ export default {
 
       });
        },
+       mounted(){
+           this.loadData();
+       },
     methods: {
         
+        /**
+         * Load data for card area
+         */
+        loadData(){
+            const cardData = [
+                {
+                    imgSrc: "card1.png",
+                    title: "New Suface Pro 7",
+                    content: `See how Katie Sowers, Asst. Coach for the 49ers, uses Surface 
+                                Pro 7 to put her plans into play.`,
+                    link: "",
+                    btnText : "Learn More"
+                },
+                {
+                    imgSrc: "card2.png",
+                    title: "New Surface Laptop 3",
+                    content: `Express yourself powerfully with a thin, light, and elegant design, 
+                            faster performance, and up to 11.5 hours battery life.`,
+                    link: "",
+                    btnText : "Learn More"
+                },
+                {
+                    imgSrc :"card3.png",
+                    title: "Save $150 + free controller",
+                    content:`Buy an Xbox One X console and double your fun with a free select
+                        extra controller. Starting at $349.`,
+                    link: "",
+                    btnText : "Learn More"
+                },
+                  {
+                    imgSrc: "card4.png",
+                    title: "The new Microsoft Edge",
+                    content: `Expect more. World class performance, with more privacy, more
+                                productivity, and more value.`,
+                    link: "",
+                    btnText : "Learn More"
+                  },
+
+                //   second card section (Home cards 2)
+                {                           
+                    imgSrc: "card5.png",
+                    title: "Microsoft Teams",
+                    content: "Unleash the power of your team.",
+                    link: "",
+                    btnText : "Shop Now"
+                },
+                {
+                    imgSrc: "card6.jpg",
+                    title: "Unlock the power of learning",
+                    content: "Get students future-ready with Windows 10 devices. Starting at $219.",
+                    link: "",
+                    btnText : "Shop Now"
+                },
+                 {                           
+                    imgSrc: "card7.png",
+                    title: "Windows 10 Enterprise",
+                    content: "Download the free 90-day evaluation for IT professionals.",
+                    link: "",
+                    btnText : "Download Now"
+                },
+                 {                           
+                    imgSrc: "card8.png",
+                    title: "Explore Kubernetes",
+                    content: ` Learn how Kubernetes works and get started with cloud native app
+                        development today.`,
+                    link: "",
+                    btnText : "Get Started"
+                }
+            ];
+
+            this.cards = cardData;
+        }
     },
 }
 </script>

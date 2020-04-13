@@ -37,7 +37,7 @@ export default {
         },
         btnText: {
             type: String,
-            required: true
+            default: "Learn More"
         }
     },
     created(){        
